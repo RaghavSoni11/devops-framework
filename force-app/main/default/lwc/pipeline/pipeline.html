@@ -1,0 +1,58 @@
+<template>
+    <div>
+        
+        <!-- <template if:true={showCompetencies}>
+            <template if:true={competencies}> -->
+                <div class="heading slds-align_absolute-center"><b>Pipeline</b></div> <br />
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-small-size--1-of-3 slds-medium-size--1-of-3 slds-large-size--1-of-3">
+                        <div class="slds-grid slds-wrap">
+                            <template for:each={data} for:item="tech">
+                                <div key={tech.name}
+                                    class="slds-col slds-size--1-of-1">
+                                    <div class="comps tile1 slds-text-align_center slds-m-around_x-small">
+                                        <p class="slds-align_absolute-center slds-p-around_x-large ttext slds-text-heading_small"
+                                             data-name={tech.name}>
+                                            {tech.name}</p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-small-size--1-of-3 slds-medium-size--1-of-3 slds-large-size--1-of-3">
+                        <div class="slds-grid slds-wrap">
+                            <template for:each={data} for:item="tech">
+                                <div key={tech.name}
+                                    class="slds-col slds-size--1-of-1">
+                                    <div class="comps tile1 slds-text-align_center slds-m-around_x-small">
+                                        <p class="slds-align_absolute-center slds-p-around_x-large ttext slds-text-heading_small"
+                                             data-name={tech.name}>
+                                            {tech.name}</p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-small-size--1-of-3 slds-medium-size--1-of-3 slds-large-size--1-of-3">
+                        <div class="slds-grid slds-wrap">
+                            <template for:each={data} for:item="tech">
+                                <div key={tech.name}
+                                    class="slds-col slds-size--1-of-1">
+                                    <div class="comps tile1 slds-text-align_center slds-m-around_x-small">
+                                        <p class="slds-align_absolute-center slds-p-around_x-large ttext slds-text-heading_small"
+                                             data-name={tech.name}>
+                                            {tech.name}</p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    
+                </div>
+            <!-- </template>
+            <template if:false={competencies}>
+                <div class="slds-align_absolute-center slds-text-heading_medium">No Competency Available </div>
+            </template>
+        </template> -->
+    </div>
+</template>

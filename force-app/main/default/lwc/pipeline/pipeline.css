@@ -1,0 +1,19 @@
+.tile1 {
+    box-shadow: 2px 2px 4px 4px #ccc;
+    border: none;
+    background-color: white;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 25px;
+    
+  }
+  .tile1:hover {
+    color: white;
+    cursor: pointer;
+    background-color: darkcyan;
+  }
+
+  .heading {
+    color:darkcyan;
+    font-size: x-large;
+  }

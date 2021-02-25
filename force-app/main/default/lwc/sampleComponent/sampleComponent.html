@@ -1,0 +1,125 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_large">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-1 slds-text-align--right ">
+                    <lightning-button label="Commit" onclick={getSelectedRows}></lightning-button>
+                    <lightning-button label="Refresh" onclick={getRecord}></lightning-button>
+                    <lightning-button label="Get All Data" onclick={getRecord1}></lightning-button>
+                </div>
+                <div class="slds-size_1-of-1">
+                    <!-- <lightning-input type="search" onchange={handleSearch} placeholder="Metadata Name"></lightning-input> -->
+                    <!-- <select name="Type" class="slds-select">
+                        <option>Select Metadata Type</option>
+                        <option>
+                            <lightning-datatable data={typeOptions} columns={typeColumn} key-field="Id"></lightning-datatable>
+                        </option>
+                        <option>
+                            <div>HI</div>
+                        </option>
+                    </select> -->
+                </div>
+                <div class="slds-size_1-of-1" style="height:250px;">
+                    <!-- <div>
+                        <lightning-combobox label="Comoponents" name="metadata-components" onchange={handleValueChange}
+                            options={options} placeholder="--None--" value={selectedValue}>
+                        </lightning-combobox>
+                    </div> -->
+                    <lightning-datatable data={dataRow} columns={column} key-field="Id"></lightning-datatable>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+    <!-- <lightning-card>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span></span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    <lightning-button label="Show Selected Contacts" onclick={showContacts} style="margin-left: 40%" variant="brand"></lightning-button>
+                </span>
+            </div>
+        </div><br/>
+        <div class="slds-scrollable_y" style="height:200px;">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table--header-fixed" style="height:200px">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate slds-cell-fixed">
+                            <lightning-input onchange={allSelected} type="checkbox" style="padding:0%;margin:0%;"></lightning-input>
+                        </div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate slds-cell-fixed" title="Name">
+                            <lightning-input type="search" onchange={handleSearch} placeholder="Name"></lightning-input>
+                        </div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate slds-cell-fixed" title="Type">Type</div>
+                    </th>
+                </tr>
+            </thead><br/>
+            <tbody>
+                <template for:each={dataRow} for:item="con">
+                    <tr key={con.Id}>
+                        <th scope="col">
+                            <div>
+                                <lightning-input type="checkbox" value={con.Name} data-id={con.Id}></lightning-input>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div>{con.name}</div>
+                        </th>
+                        <th scope="col">
+                            <div>{con.type}</div>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table></div>
+    </lightning-card>
+    <lightning-card>
+    <div class="slds-table--header-fixed_container" style="height:250px;">
+        <div class="slds-scrollable_y" style="height:100%;">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table--header-fixed">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate slds-cell-fixed">
+                                <lightning-input onchange={allSelected} type="checkbox"></lightning-input>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="Name">
+                                <lightning-input type="search" onchange={handleSearch} placeholder="Name"></lightning-input>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="Type">Type</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={dataRow} for:item="con">
+                        <tr key={con.Id}>
+                            <th scope="col">
+                                <div>
+                                    <lightning-input type="checkbox" value={con.Name} data-id={con.Id}></lightning-input>
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div>{con.name}</div>
+                            </th>
+                            <th scope="col">
+                                <div>{con.type}</div>
+                            </th>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+  
+        </div>
+    </div>
+    </lightning-card> -->
+</template>

@@ -1,0 +1,52 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_large">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-1 slds-text-align--right ">
+                    <lightning-button label="Commit" onclick={getSelectedRows}></lightning-button>
+                    <lightning-button label="Refresh" onclick={getRecord}></lightning-button>
+                </div>
+                <div class="slds-size_1-of-1" style="height:250px;">
+                    <lightning-datatable data={dataRow} columns={column} key-field="Id"></lightning-datatable>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+    <!--Modal-->
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" onclick={closeModal} ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Validate & Commit</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-modal_large">
+                        <div class="slds-p-horizontal_medium">
+                            <div class="slds-size_1-of-1" style="height:100px;">
+                                <lightning-datatable data={selectedRows} columns={column} key-field="Id" hide-checkbox-column="true"></lightning-datatable>
+                            </div>
+                            <br/>
+                            <lightning-input type="text" placeholder="Any Comment" onchange={handleDescription}></lightning-input>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <lightning-button class="" variant="brand" label="Commit" onclick={handleCommit}></lightning-button>&nbsp;
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
